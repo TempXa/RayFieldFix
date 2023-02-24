@@ -666,6 +666,7 @@ end
 
 function Hide()
 if Notified == false then
+Notified = true
 RayfieldLibrary:Notify({Title = "Interface Hidden", Content = "The interface has been hidden, you can unhide the interface by tapping Right Ctrl", Duration = 7})
 end
 	Debounce = true
