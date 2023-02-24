@@ -2564,8 +2564,8 @@ Topbar.Hide.MouseButton1Click:Connect(function()
 	end
 end)
 
-UserInputService.InputBegan:Connect(function(input)
-	if (input.KeyCode == Enum.KeyCode.RightShift) then
+UserInputService.InputBegan:Connect(function(input, proccesed)
+	if (input.KeyCode == Enum.KeyCode.RightControl and not proccesed) then
 		if Debounce then return end
 		if Hidden then
 			Hidden = false
