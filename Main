@@ -1,3 +1,5 @@
+repeat wait() until game:IsLoaded()
+
 local Release = "Beta 7R"
 local NotificationDuration = 6.5
 local RayfieldFolder = "Rayfield"
