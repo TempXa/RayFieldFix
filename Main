@@ -2622,4 +2622,10 @@ wait(holdTime)
 vim:SendKeyEvent(false, Key,false,game)
 end
 
+function pressMB(x,y,mb, holdTime)
+vim:SendMouseButtonEvent(x,y, mb, true, game, 1)
+wait(holdTime)
+vim:SendMouseButtonEvent(x,y, mb, false, game, 1)
+end
+
 return RayfieldLibrary
