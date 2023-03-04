@@ -1,23 +1,9 @@
---[[
-
-Rayfield Interface Suite
-by Sirius
-
-shlex | Designing + Programming
-iRay  | Programming
-
-]]
-
-
-
 local Release = "Beta 7R"
 local NotificationDuration = 6.5
 local RayfieldFolder = "Rayfield"
 local ConfigurationFolder = RayfieldFolder.."/Configurations"
 local ConfigurationExtension = ".rfld"
 local Notified = false
-
-
 
 local RayfieldLibrary = {
 	Flags = {},
@@ -2608,6 +2594,30 @@ function RayfieldLibrary:LoadConfiguration()
 			end
 		end)
 	end
+end
+
+function Notify(notifyName,notifyText)
+Rayfield:Notify({
+    Title = notifyName,
+    Content = notifyText,
+    Duration = 6.5,
+    Image = 4483362458,
+    Actions = { -- Notification Buttons
+        Ignore = {
+            Name = "Okay!",
+            Callback = function()
+            end
+        },
+    },
+})
+end
+
+local vim = game:GetService('VirtualInputManager')
+
+function pressKey(Key,holdTime)
+vim:SendKeyEvent(true, Key,false,game)
+wait(holdTime)
+vim:SendKeyEvent(false, Key,false,game)
 end
 
 return RayfieldLibrary
